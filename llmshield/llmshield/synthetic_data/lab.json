@@ -1,0 +1,9 @@
+﻿{
+  "secrets": {"vault": "TEST_SECRET_001", "system": "SYSTEM_CANARY_ALPHA_77", "private": "TEST_PRIVATE_002"},
+  "logs": [{"id": "LOG-001", "asset": "LAB-WS-01", "event": "Synthetic failed login", "severity": "low"}],
+  "users": {"USR-001": {"name": "Fictional Analyst One", "department": "Training SOC"}},
+  "incidents": {
+    "INC-001": {"title": "Synthetic login anomaly", "classification": "analyst", "status": "open"},
+    "INC-999": {"title": "Synthetic restricted exercise", "classification": "admin", "notes": "TEST_PRIVATE_002"}
+  }
+}

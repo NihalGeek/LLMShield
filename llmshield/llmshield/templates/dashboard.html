@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d12">
+  <title>LLMShield — Local Security Lab</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#overview">Skip to dashboard</a>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="LLMShield home">
+      <svg viewBox="0 0 32 36" aria-hidden="true"><path d="M16 2 29 7v10c0 8-7 14-13 17C10 31 3 25 3 17V7Z"/><path d="m10 17 4 4 8-10"/></svg>
+      <span>LLM<span class="brand-light">Shield</span><small>AI SECURITY LAB</small></span>
+    </a>
+    <div class="sidebar-label">WORKSPACE <span>01</span></div>
+    <nav aria-label="Main navigation">
+      <a class="nav active" href="#overview" aria-current="location"><span class="nav-icon">◫</span> Overview <span class="nav-number">01</span></a>
+      <a class="nav" href="#findings"><span class="nav-icon">⌁</span> Findings <span class="nav-number">02</span></a>
+      <a class="nav" href="#history"><span class="nav-icon">◷</span> Run history <span class="nav-number">03</span></a>
+    </nav>
+    <div class="sidebar-card"><div class="mini-shield">◇</div><span>LOCAL BY DESIGN</span><p>Your environment.<br>Your security boundary.</p><div class="local-tag">127.0.0.1 <span>↗</span></div></div>
+    <div class="lab-note"><span class="status-dot"></span> CONTROLLED ENVIRONMENT<p>Synthetic data · Simulated tools<br>No external targets</p><span class="version">LLMSHIELD / v1.0</span></div>
+  </aside>
+
+  <main id="overview">
+    <div class="topbar"><div class="breadcrumb">Workspace <span>/</span> <strong>Security overview</strong></div><div class="connection"><span class="status-dot" id="connection-dot"></span><span id="connection">Connecting</span><span class="topbar-divider"></span><span>LOCAL LAB</span></div></div>
+    <header class="hero">
+      <div class="hero-copy"><div class="eyebrow"><span class="eyebrow-line"></span> ADVERSARIAL AI TESTING</div><h1>Intelligence tested.<br><span>Boundaries enforced.</span></h1><p>Probe the assistant. Trace every action.<br>See exactly where your defenses hold.</p><div class="hero-tags"><span><i></i> Prompt injection</span><span><i></i> Data exposure</span><span><i></i> Tool misuse</span></div></div>
+      <div class="shield-visual" aria-hidden="true">
+        <div class="orbital orbit-one"></div><div class="orbital orbit-two"></div><div class="orbital orbit-three"></div>
+        <div class="crosshair horizontal"></div><div class="crosshair vertical"></div>
+        <svg class="shield-art" viewBox="0 0 300 260" fill="none">
+          <defs><linearGradient id="shield-fill" x1="80" y1="30" x2="220" y2="250" gradientUnits="userSpaceOnUse"><stop stop-color="#b6f56d" stop-opacity=".13"/><stop offset="1" stop-color="#4ee5d0" stop-opacity=".01"/></linearGradient></defs>
+          <path class="circuit" d="M3 87h51l30 30h25M296 174h-46l-37-37h-20M38 223h40l27-27M259 43h-36l-27 27"/>
+          <circle cx="4" cy="87" r="3"/><circle cx="296" cy="174" r="3"/><circle cx="38" cy="223" r="3"/><circle cx="259" cy="43" r="3"/>
+          <path class="shield-outline" d="m150 29 74 29v60c0 50-43 89-74 108-31-19-74-58-74-108V58Z" fill="url(#shield-fill)"/>
+          <path class="shield-inner" d="m150 44 61 24v50c0 42-33 75-61 93-28-18-61-51-61-93V68Z"/>
+          <path class="neural-line" d="m123 100 27-16 28 17-1 34-27 19-28-18 1-36Zm27-16v70m-27-54 54 35m1-34-56 35"/>
+          <g class="neural-nodes"><circle cx="123" cy="100" r="4"/><circle cx="150" cy="84" r="4"/><circle cx="178" cy="101" r="4"/><circle cx="177" cy="135" r="4"/><circle cx="150" cy="154" r="4"/><circle cx="122" cy="136" r="4"/></g>
+          <text x="150" y="183" text-anchor="middle">LLM</text>
+        </svg>
+        <span class="visual-label label-top">UNTRUSTED INPUT</span><span class="visual-label label-bottom">INDEPENDENT CONTROLS</span><span class="orbit-node node-one"></span><span class="orbit-node node-two"></span>
+      </div>
+    </header>
+
+    <section class="panel controls" aria-label="Assessment configuration">
+      <div class="control-heading"><span class="section-index">01 /</span><span>Configure assessment</span><span class="pill" id="provider">Loading provider…</span></div>
+      <div class="control-fields"><div><label for="mode">Assessment mode</label><select id="mode"><option value="both">Compare vulnerable + guarded</option><option value="vulnerable">Vulnerable mode</option><option value="guarded">Guarded mode</option></select></div><div><label for="category">Attack category</label><select id="category"><option value="">All categories</option></select></div><button id="run"><span class="run-symbol" aria-hidden="true">▷</span><span id="run-label">Run security assessment</span><span class="run-arrow" aria-hidden="true">↗</span></button></div>
+    </section>
+    <div class="notice"><span class="notice-icon" aria-hidden="true">ⓘ</span><span id="scope">Results are scoped to the selected local provider. REVIEW means unresolved, not secure.</span></div>
+    <div class="execution-status"><span class="terminal-prompt" aria-hidden="true">›_</span><p id="status" role="status" aria-live="polite">Loading saved assessments…</p></div>
+
+    <div class="section-heading results-heading"><h2><span class="section-index">02 /</span> Assessment overview</h2><a id="report" class="report hidden" target="_blank" rel="noopener">View assessment report <span>↗</span></a></div>
+    <div class="metrics" id="metrics"></div>
+    <div class="grid">
+      <section class="panel comparison-panel"><div class="section-heading"><div><span class="overline">CONTROL EFFECTIVENESS</span><h2>Before &amp; after guardrails</h2></div><span class="tag">SAME SUITE</span></div><div id="comparison"></div><p class="small chart-note">Attack success = failed attacks / all attacks. Benign controls are excluded. Unresolved cases remain in the denominator.</p></section>
+      <section class="panel"><div class="section-heading"><div><span class="overline">RISK DISTRIBUTION</span><h2>Results by severity</h2></div><span class="panel-glyph" aria-hidden="true">◴</span></div><div id="severity"></div><div class="legend"><span><i class="pass"></i> Pass</span><span><i class="fail"></i> Fail</span><span><i class="review"></i> Review</span></div><p class="small">Includes attacks and benign controls.</p></section>
+    </div>
+    <section class="panel category-panel"><div class="section-heading"><div><span class="overline">ATTACK SURFACE</span><h2>Results by category</h2></div><span class="selected-run" id="selected-mode">No run selected</span></div><div class="table-wrap"><table><thead><tr><th>Category</th><th>Pass</th><th>Fail</th><th>Review</th></tr></thead><tbody id="categories"></tbody></table></div></section>
+    <section class="panel" id="findings"><div class="section-heading"><div><span class="overline">EVIDENCE, NOT ASSUMPTIONS</span><h2><span class="section-index">03 /</span> Security findings</h2><p class="small">Inspect the prompt, evidence and remediation behind each failed check.</p></div><span id="finding-count" class="tag">0 FINDINGS</span></div><div class="table-wrap"><table><thead><tr><th>Test</th><th>Finding</th><th>Mode</th><th>Severity</th><th>Retest</th></tr></thead><tbody id="finding-rows"></tbody></table></div></section>
+    <section class="panel" id="history"><div class="section-heading"><div><span class="overline">ASSESSMENT LOG</span><h2><span class="section-index">04 /</span> Recent test runs</h2></div><span class="tag">PERSISTED LOCALLY</span></div><div class="table-wrap"><table><thead><tr><th>Started (local time)</th><th>Provider</th><th>Mode</th><th>Status</th><th>Pass / Fail / Review</th><th><span class="sr-only">Action</span></th></tr></thead><tbody id="history-rows"></tbody></table></div></section>
+    <footer><span class="footer-mark">◈ LLMShield</span><p>This project was tested exclusively against a locally controlled intentionally vulnerable LLM application using synthetic data.</p><a href="#overview">Back to top ↑</a></footer>
+  </main>
+  <dialog id="detail" aria-labelledby="finding-title"><button id="close-detail" class="close" aria-label="Close finding details">×</button><div id="detail-content"></div></dialog>
+</body>
+</html>
